@@ -1,0 +1,41 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Secretos: NUNCA subir
+*.psk
+*.key
+*.pem
+*.crt
+*.pfx
+*.kdbx
+*.env
+.env*
+secrets*
+credenciales*
+passwords*.txt
+token*.txt
+*.secret
+
+# Dumps y respaldos
+*.dump
+*.sql
+*.sql.gz
+*.tar.gz
+*.bak
+backups/
+
+# Logs
+*.log
+
+# Temporales
+tmp/
+*.tmp
+CLAUDE.md
+docs/guion-entrevista.md
+linkedin/

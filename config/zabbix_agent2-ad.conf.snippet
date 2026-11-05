@@ -1,0 +1,12 @@
+# Fragmento para agregar al final de:
+#   C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf
+# en AD-1 y AD-2 (Domain Controllers). Luego: Restart-Service "Zabbix Agent 2"
+
+# PowerShell tarda más de los 3 s por defecto en arrancar; subir el límite (máx. 30)
+Timeout=30
+
+# Cantidad de fallos de replicación de AD (0 = sano, -1 = error de la consulta)
+UserParameter=ad.repl.failures,powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "C:\Program Files\Zabbix Agent 2\scripts\Get-ADReplFailures.ps1"
+
+# Prueba local:
+#   & "C:\Program Files\Zabbix Agent 2\zabbix_agent2.exe" -c "C:\Program Files\Zabbix Agent 2\zabbix_agent2.conf" -t ad.repl.failures
